@@ -1,6 +1,6 @@
-# Building TranscribeAI
+# Building WaveMind
 
-This produces a single self-contained `TranscribeAI.exe` (no external DLLs).
+This produces a single self-contained `WaveMind.exe` (no external DLLs).
 
 ## Prerequisites
 
@@ -29,13 +29,13 @@ The dependencies (`imgui[glfw-binding,opengl3-binding]`, `glfw3`, `curl`,
 
 ```powershell
 $env:VCPKG_ROOT = "C:\dev\vcpkg"
-cd C:\dev\TranscribeAI
+cd C:\dev\WaveMind
 
 cmake --preset windows-msvc-release
 cmake --build --preset release
 ```
 
-Output: `build/release/Release/TranscribeAI.exe` (verified ~2 MB, links only
+Output: `build/release/Release/WaveMind.exe` (verified ~2 MB, links only
 Windows system DLLs).
 
 ### Debug build
@@ -43,12 +43,12 @@ Windows system DLLs).
 ```powershell
 cmake --preset windows-msvc-debug
 cmake --build --preset debug
-# Output: build/debug/Debug/TranscribeAI.exe
+# Output: build/debug/Debug/WaveMind.exe
 ```
 
 ## Usage
 
-1. Launch `TranscribeAI.exe`. The Settings panel slides open on startup.
+1. Launch `WaveMind.exe`. The Settings panel slides open on startup.
 2. Paste your OpenAI API key, then click **Save key** (encrypted with Windows
    DPAPI under your user account).
 3. Pick a model (default `gpt-4o-mini-transcribe`).
@@ -56,5 +56,5 @@ cmake --build --preset debug
    appear and auto-scroll.
 5. Click **Stop** to end the session.
 
-The key is stored encrypted at `%APPDATA%\TranscribeAI\key.dat` and is decrypted
+The key is stored encrypted at `%APPDATA%\WaveMind\key.dat` and is decrypted
 and prefilled automatically on the next launch.

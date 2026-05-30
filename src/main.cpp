@@ -395,7 +395,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    GLFWwindow* window = glfwCreateWindow(900, 720, "TranscribeAI", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(900, 720, "WaveMind", nullptr, nullptr);
     if (!window) {
         glfwTerminate();
         curl_global_cleanup();
@@ -525,7 +525,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
         ImGuiViewport* vp = ImGui::GetMainViewport();
         ImGui::SetNextWindowPos(vp->WorkPos);
         ImGui::SetNextWindowSize(vp->WorkSize);
-        ImGui::Begin("TranscribeAI", nullptr,
+        ImGui::Begin("WaveMind", nullptr,
                      ImGuiWindowFlags_NoDecoration |
                      ImGuiWindowFlags_NoMove |
                      ImGuiWindowFlags_NoSavedSettings |
@@ -541,11 +541,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
             }
             ImGui::BeginGroup();
             if (font_title) ImGui::PushFont(font_title);
-            ImGui::TextUnformatted("TRANSCRIBE AI");
+            ImGui::TextUnformatted("WAVEMIND");
             if (font_title) ImGui::PopFont();
             if (font_sub) ImGui::PushFont(font_sub);
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.70f, 0.30f, 0.24f, 1.0f));
-            ImGui::TextUnformatted("WAVEMIND  \xE2\x80\xA2  DEDICATE YOUR EARS");
+            ImGui::TextUnformatted("DEDICATE YOUR EARS  \xE2\x80\xA2  AUDIO & VIDEO TRANSCRIPTION");
             ImGui::PopStyleColor();
             if (font_sub) ImGui::PopFont();
             ImGui::EndGroup();

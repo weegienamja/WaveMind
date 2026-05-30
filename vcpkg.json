@@ -1,5 +1,5 @@
 {
-  "name": "transcribeai",
+  "name": "wavemind",
   "version": "1.0.0",
   "builtin-baseline": "c0948694cceff995e5cf90b751e0c5a95d613458",
   "dependencies": [

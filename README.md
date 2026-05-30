@@ -1,6 +1,6 @@
 <div align="center">
   <img src="assets/wavemindlogo.png" alt="WaveMind" width="140" />
-  <h1>WaveMind / TranscribeAI</h1>
+  <h1>WaveMind</h1>
   <p><b>WAVEMIND &bull; DEDICATE YOUR EARS</b></p>
   <p>A wee Windows desktop app that listens to whatever your PC is playing, or to any video/audio file you throw at it, and turns it into a live transcript using the OpenAI API.</p>
 </div>
@@ -51,7 +51,7 @@ flowchart TD
     OAI -->|text| Q["Transcript queue"]
     Q --> UI["ImGui UI<br/>selectable transcript"]
 
-    KS["DPAPI key store<br/>%APPDATA%/TranscribeAI/key.dat"] --> TR
+    KS["DPAPI key store<br/>%APPDATA%/WaveMind/key.dat"] --> TR
     UI -.->|save key| KS
 ```
 
@@ -98,7 +98,7 @@ Stopping is non blocking too. When you hit Stop, the UI flips a flag and the dev
 | Image loading | stb_image (for the embedded logo) |
 | Key storage | Windows DPAPI (`CryptProtectData` / `CryptUnprotectData`) |
 
-Everything is statically linked into one `TranscribeAI.exe` whose only dependencies are standard Windows system DLLs.
+Everything is statically linked into one `WaveMind.exe` whose only dependencies are standard Windows system DLLs.
 
 ## Project structure
 
@@ -141,7 +141,7 @@ cmake --preset windows-msvc-release
 cmake --build --preset release
 ```
 
-The result is `build/release/Release/TranscribeAI.exe`. There is more detail in [BUILD.md](BUILD.md), including the one gotcha (the vcpkg bundled inside Visual Studio is not a git repo, so use a real clone).
+The result is `build/release/Release/WaveMind.exe`. There is more detail in [BUILD.md](BUILD.md), including the one gotcha (the vcpkg bundled inside Visual Studio is not a git repo, so use a real clone).
 
 ## Using it
 

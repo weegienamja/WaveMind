@@ -11,7 +11,7 @@ namespace KeyStore {
 
 namespace {
 
-// Resolve %APPDATA%\TranscribeAI\key.dat as a filesystem::path, creating the
+// Resolve %APPDATA%\WaveMind\key.dat as a filesystem::path, creating the
 // folder if needed. Keeping it as a path (not a narrow string) means fstream
 // opens it correctly even when the user profile contains non-ASCII characters.
 std::expected<std::filesystem::path, std::string> resolve_key_path() {
@@ -19,7 +19,7 @@ std::expected<std::filesystem::path, std::string> resolve_key_path() {
     if (FAILED(SHGetKnownFolderPath(FOLDERID_RoamingAppData, 0, nullptr, &appdata_w))) {
         return std::unexpected("Failed to resolve the APPDATA folder");
     }
-    std::filesystem::path dir = std::filesystem::path(appdata_w) / L"TranscribeAI";
+    std::filesystem::path dir = std::filesystem::path(appdata_w) / L"WaveMind";
     CoTaskMemFree(appdata_w);
 
     std::error_code ec;
@@ -52,7 +52,7 @@ std::expected<void, std::string> save(const std::string& plaintext) {
 
     DATA_BLOB output{};
     // dwFlags = 0 selects user-scope encryption: only this Windows account can decrypt.
-    if (!CryptProtectData(&input, L"TranscribeAI API Key", nullptr, nullptr, nullptr,
+    if (!CryptProtectData(&input, L"WaveMind API Key", nullptr, nullptr, nullptr,
                           0, &output)) {
         return std::unexpected("CryptProtectData failed: " + std::to_string(GetLastError()));
     }

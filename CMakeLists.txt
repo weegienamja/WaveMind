@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(TranscribeAI LANGUAGES CXX RC)
+project(WaveMind LANGUAGES CXX RC)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -15,7 +15,7 @@ find_package(nlohmann_json CONFIG REQUIRED)
 find_path(MINIAUDIO_INCLUDE_DIR NAMES miniaudio.h REQUIRED)
 find_path(STB_INCLUDE_DIR NAMES stb_image.h REQUIRED)
 
-add_executable(TranscribeAI WIN32
+add_executable(WaveMind WIN32
     src/main.cpp
     src/key_store.cpp
     src/audio_capture.cpp
@@ -27,9 +27,9 @@ add_executable(TranscribeAI WIN32
     resource.rc
 )
 
-target_compile_features(TranscribeAI PRIVATE cxx_std_23)
+target_compile_features(WaveMind PRIVATE cxx_std_23)
 
-target_compile_definitions(TranscribeAI PRIVATE
+target_compile_definitions(WaveMind PRIVATE
     UNICODE
     _UNICODE
     WIN32_LEAN_AND_MEAN
@@ -37,13 +37,13 @@ target_compile_definitions(TranscribeAI PRIVATE
     _CRT_SECURE_NO_WARNINGS
 )
 
-target_include_directories(TranscribeAI PRIVATE
+target_include_directories(WaveMind PRIVATE
     src
     ${MINIAUDIO_INCLUDE_DIR}
     ${STB_INCLUDE_DIR}
 )
 
-target_link_libraries(TranscribeAI PRIVATE
+target_link_libraries(WaveMind PRIVATE
     imgui::imgui
     glfw
     CURL::libcurl
@@ -65,6 +65,6 @@ target_link_libraries(TranscribeAI PRIVATE
 )
 
 if(MSVC)
-    target_compile_options(TranscribeAI PRIVATE /W3 /MP /utf-8)
-    target_compile_options(TranscribeAI PRIVATE /Zc:__cplusplus)
+    target_compile_options(WaveMind PRIVATE /W3 /MP /utf-8)
+    target_compile_options(WaveMind PRIVATE /Zc:__cplusplus)
 endif()

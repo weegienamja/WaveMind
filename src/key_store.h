@@ -3,7 +3,7 @@
 #include <string>
 
 // Encrypt and persist the API key using Windows DPAPI.
-// Stored at %APPDATA%\TranscribeAI\key.dat (user-scope encryption).
+// Stored at %APPDATA%\WaveMind\key.dat (user-scope encryption).
 namespace KeyStore {
 
 // Returns the full path to the key file, creating the directory if needed.
