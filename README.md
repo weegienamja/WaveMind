@@ -158,6 +158,10 @@ The result is `build/release/Release/TranscribeAI.exe`. There is more detail in 
 - You bring your own OpenAI API key, and transcription calls go to OpenAI, so usage is billed to your account.
 - The VAD is deliberately simple. It cuts on roughly 600 ms of quiet or a 30 second cap, and it carries a little context between chunks so sentences flow across boundaries.
 
+## Acknowledgements
+
+Claude (Anthropic) helped scaffold the project and talk through some of the Windows plumbing. The direction, decisions and final code are mine.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
