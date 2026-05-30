@@ -1,0 +1,6 @@
+# Build output
+/build/
+# vcpkg manifest-mode install tree
+vcpkg_installed/
+# Logs
+*.log

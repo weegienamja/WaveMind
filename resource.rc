@@ -1,0 +1,8 @@
+#include "src/resource.h"
+
+// Application icon (used by Explorer, the taskbar, and the title bar).
+IDI_APPICON ICON "assets/app_icon.ico"
+
+// Logo PNG embedded into the executable so the app stays a single self-contained
+// file. Loaded at runtime via FindResource/LoadResource + stb_image.
+IDR_LOGO_PNG RCDATA "assets/logo_embed.png"
