@@ -1,0 +1,14 @@
+# Normalize line endings so collaborators on any OS get consistent checkouts.
+* text=auto
+
+# Source files use LF in the repo.
+*.cpp text eol=lf
+*.h   text eol=lf
+*.txt text eol=lf
+*.md  text eol=lf
+*.json text eol=lf
+*.rc  text eol=lf
+
+# Binary assets should never be touched.
+*.png binary
+*.ico binary
